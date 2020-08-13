@@ -1,0 +1,25 @@
+.container{
+  height: 100%;
+}
+
+table{
+  border: 1px solid black;
+  margin-top: 25px;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+table td{
+  border: 1px solid black;
+}
+
+h4{
+  margin-top: 20px !important;
+  text-align: center;
+}
+
+.day-content{
+  height: 66px;
+}

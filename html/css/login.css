@@ -5,6 +5,10 @@ p{
     margin-top: 20px !important;
 }
 
+input{
+    width: 100%;
+}
+
 /* class指定 */
 
 .container{
@@ -45,14 +49,4 @@ p{
 .new-account{
     font-size: 15px !important;
     text-align: center;
-}
-
-/* id指定 */
-
-#accountID{
-    width: 100%;
-}
-
-#password{
-    width: 100%;
 }

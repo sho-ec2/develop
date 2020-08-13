@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="css/base.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -33,21 +33,26 @@
     </header>
     <div class="container">
       <div class="login-form card">
-        <h3 class="card-title login-title">ログイン</h3>
+        <h3 class="card-title login-title">新規登録</h3>
         <div class="card-body">
           <div class="accountID-area">
             <p>アカウントID</p>
             <input id="accountID" type="text" placeholder="アカウントID">
           </div>
+          <div class="accountID-area">
+            <p>メールアドレス</p>
+            <input id="email" type="email" placeholder="メールアドレス">
+          </div>
           <div class="password-area">
             <p>パスワード</p>
             <input id="password" type="password" placeholder="パスワード">
           </div>
+          <div class="password-area">
+            <p>再パスワード</p>
+            <input id="repassword" type="password" placeholder="再パスワード">
+          </div>
           <button type="submit" class="btn btn-primary login-btn">送信</button>
         </div>
-      </div>
-      <div class="new-account">
-        <p>新規登録の場合は<a href="signup.html">こちら</a></p>
       </div>
     </div>
     <!--  javascript&Jquery -->
