@@ -23,3 +23,25 @@ h4{
 .day-content{
   height: 66px;
 }
+
+.detail{
+  height: 100px;
+  display: none;
+}
+
+.h3-title{
+  margin-top: 20px;
+}
+
+.pls-btn{
+  display: block;
+  height: 30px;
+  padding:2px 5px 8px 5px;
+  width: 30px;
+  margin-top: 10px;
+}
+
+.member-select{
+  height: 30px;
+  margin-bottom: 10px;
+}

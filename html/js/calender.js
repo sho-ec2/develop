@@ -20,3 +20,13 @@ function putDateInCalendar(datesList){
     }
   }
 }
+
+$('.week1').on('click', 'td', function(){
+  $('.detail').slideToggle(2);
+});
+
+function pushPlsBtn(v){
+  //alert($(v).parent().html());
+  var option = $('<select class="form-control member-select" name="member"><option></option></select>');
+  $(v).parent().find('.member-add').append(option);
+};
