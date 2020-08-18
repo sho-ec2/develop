@@ -17,7 +17,6 @@ table td{
 
 h4{
   margin-top: 20px !important;
-  text-align: center;
 }
 
 .day-content{
@@ -44,4 +43,28 @@ h4{
 .member-select{
   height: 30px;
   margin-bottom: 10px;
+}
+
+.input-div{
+  margin: 0px auto;
+}
+
+.input-timeFrom{
+  width: 40% !important;
+  text-align: center;
+}
+
+.wave{
+  width: 20% !important;
+  text-align: center;
+  /* padding: 0px 15px; */
+}
+
+.input-timeTo{
+  width: 40% !important;
+  text-align: center;
+}
+
+.input-div input{
+  display: inline;
 }

@@ -30,3 +30,22 @@ function pushPlsBtn(v){
   var option = $('<select class="form-control member-select" name="member"><option></option></select>');
   $(v).parent().find('.member-add').append(option);
 };
+
+function adjastTime(v){
+  var raw = $(v).val();
+  if(raw){
+    if(raw.length === 4){
+      if(raw.match(/^([01]?[0-9]|2[0-3])([0-5][0-9])$/)){
+        var time = raw.substring(0, 2) + ':' + raw.substring(2, 4);
+        $(v).val(time);
+      }else if(raw.match(/^([01]?[0-9]|2[0-3]):([0-5][0-9])$/)){
+      }else{
+        alert('入力された時間に間違いがあります');
+        $(v).val('');
+      }
+    }else{
+      alert('入力された時間に間違いがあります');
+      $(v).val('');
+    }
+  }
+}

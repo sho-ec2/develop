@@ -33,7 +33,7 @@
       </div>
     </header>
     <div class="container">
-      <h4>8<span>月</span></h4>
+      <h4 class="td-center">8<span>月</span></h4>
       <table>
         <tr>
           <th class="td-center font20">日</th>
@@ -57,9 +57,9 @@
           <td colspan="7" style="height: 500px;">
             <div class="card" style="height: 100%; margin: 10px;">
               <div class="card-body">
-                <h3 class="td-center card-title">予定追加</h3>
+                <h4 class="card-title">時間</h4>
                 <div class="card-text">
-                  <div style="width: 100%;">
+                  <!-- <div style="width: 100%;">
                     <p>タイトル：</p>
                     <input type="text" maxlength="15" style="width: 100%;">
                     <div class="member-add">
@@ -70,6 +70,12 @@
                       </select>
                     </div>
                     <button type="button" class="btn btn-primary pls-btn" style="display: block;height: 30px; padding:2px 5px 8px 5px; width: 30px;margin-top: 10px;" onclick="pushPlsBtn(this);">＋</button>
+                  </div> -->
+                  <div style="width: 100%;" class="input-div">
+                    <p>(例： 01:00, 20:30)</p>
+                    <input type="time" maxlength="5" class="form-control input-timeFrom" onblur="adjastTime(this);">
+                    <span class="wave">〜</span>
+                    <input type="time" maxlength="5" class="form-control input-timeTo" onblur="adjastTime(this);">
                   </div>
                 </div>
               </div>
