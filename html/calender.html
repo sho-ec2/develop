@@ -33,7 +33,7 @@
       </div>
     </header>
     <div class="container">
-      <h4 class="td-center">8<span>月</span></h4>
+      <h4 class="td-center"><label id="title-year">2020</label>年<label class="title-month">8</label>月</h4>
       <table>
         <tr>
           <th class="td-center font20">日</th>
@@ -44,6 +44,9 @@
           <th class="td-center font20">金</th>
           <th class="td-center font20">土</th>
         </tr>
+        <tr>
+          <td class="td-height"></td>
+        </tr>
         <tr class="week1">
           <td class="td-center font20 day1 font-red"></td>
           <td class="td-center font20 day2"></td>
@@ -53,7 +56,7 @@
           <td class="td-center font20 day6"></td>
           <td class="td-center font20 day7 font-blue"></td>
         </tr>
-        <tr class="detail">
+        <tr class="week1-detail">
           <td colspan="7" style="height: 500px;">
             <div class="card" style="height: 100%; margin: 10px;">
               <div class="card-body">
@@ -100,6 +103,35 @@
           <td class="td-center font20 day6"></td>
           <td class="td-center font20 day7 font-blue"></td>
         </tr>
+        <tr class="week2-detail">
+          <td colspan="7" style="height: 500px;">
+            <div class="card" style="height: 100%; margin: 10px;">
+              <div class="card-body">
+                <h4 class="card-title">時間</h4>
+                <div class="card-text">
+                  <!-- <div style="width: 100%;">
+                    <p>タイトル：</p>
+                    <input type="text" maxlength="15" style="width: 100%;">
+                    <div class="member-add">
+                      <p style="margin-top: 20px;">メンバー</p>
+                      <select class="form-control member-select" name="member">
+                        <option value="">高橋</option>
+                        <option value="">シュート</option>
+                      </select>
+                    </div>
+                    <button type="button" class="btn btn-primary pls-btn" style="display: block;height: 30px; padding:2px 5px 8px 5px; width: 30px;margin-top: 10px;" onclick="pushPlsBtn(this);">＋</button>
+                  </div> -->
+                  <div style="width: 100%;" class="input-div">
+                    <p>(例： 01:00, 20:30)</p>
+                    <input type="time" maxlength="5" class="form-control input-timeFrom" onblur="adjastTime(this);">
+                    <span class="wave">〜</span>
+                    <input type="time" maxlength="5" class="form-control input-timeTo" onblur="adjastTime(this);">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
         <tr>
           <td class="day-content"><a href=""></a></td>
           <td class="day-content"><a href=""></a></td>
@@ -117,6 +149,35 @@
           <td class="td-center font20 day5"></td>
           <td class="td-center font20 day6"></td>
           <td class="td-center font20 day7 font-blue"></td>
+        </tr>
+        <tr class="week3-detail">
+          <td colspan="7" style="height: 500px;">
+            <div class="card" style="height: 100%; margin: 10px;">
+              <div class="card-body">
+                <h4 class="card-title">時間</h4>
+                <div class="card-text">
+                  <!-- <div style="width: 100%;">
+                    <p>タイトル：</p>
+                    <input type="text" maxlength="15" style="width: 100%;">
+                    <div class="member-add">
+                      <p style="margin-top: 20px;">メンバー</p>
+                      <select class="form-control member-select" name="member">
+                        <option value="">高橋</option>
+                        <option value="">シュート</option>
+                      </select>
+                    </div>
+                    <button type="button" class="btn btn-primary pls-btn" style="display: block;height: 30px; padding:2px 5px 8px 5px; width: 30px;margin-top: 10px;" onclick="pushPlsBtn(this);">＋</button>
+                  </div> -->
+                  <div style="width: 100%;" class="input-div">
+                    <p>(例： 01:00, 20:30)</p>
+                    <input type="time" maxlength="5" class="form-control input-timeFrom" onblur="adjastTime(this);">
+                    <span class="wave">〜</span>
+                    <input type="time" maxlength="5" class="form-control input-timeTo" onblur="adjastTime(this);">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
         </tr>
         <tr>
           <td class="day-content"><a href=""></a></td>
@@ -136,6 +197,35 @@
           <td class="td-center font20 day6"></td>
           <td class="td-center font20 day7 font-blue"></td>
         </tr>
+        <tr class="week4-detail">
+          <td colspan="7" style="height: 500px;">
+            <div class="card" style="height: 100%; margin: 10px;">
+              <div class="card-body">
+                <h4 class="card-title">時間</h4>
+                <div class="card-text">
+                  <!-- <div style="width: 100%;">
+                    <p>タイトル：</p>
+                    <input type="text" maxlength="15" style="width: 100%;">
+                    <div class="member-add">
+                      <p style="margin-top: 20px;">メンバー</p>
+                      <select class="form-control member-select" name="member">
+                        <option value="">高橋</option>
+                        <option value="">シュート</option>
+                      </select>
+                    </div>
+                    <button type="button" class="btn btn-primary pls-btn" style="display: block;height: 30px; padding:2px 5px 8px 5px; width: 30px;margin-top: 10px;" onclick="pushPlsBtn(this);">＋</button>
+                  </div> -->
+                  <div style="width: 100%;" class="input-div">
+                    <p>(例： 01:00, 20:30)</p>
+                    <input type="time" maxlength="5" class="form-control input-timeFrom" onblur="adjastTime(this);">
+                    <span class="wave">〜</span>
+                    <input type="time" maxlength="5" class="form-control input-timeTo" onblur="adjastTime(this);">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
         <tr>
           <td class="day-content"><a href=""></a></td>
           <td class="day-content"><a href=""></a></td>
@@ -153,6 +243,35 @@
           <td class="td-center font20 day5"></td>
           <td class="td-center font20 day6"></td>
           <td class="td-center font20 day7 font-blue"></td>
+        </tr>
+        <tr class="week5-detail">
+          <td colspan="7" style="height: 500px;">
+            <div class="card" style="height: 100%; margin: 10px;">
+              <div class="card-body">
+                <h4 class="card-title">時間</h4>
+                <div class="card-text">
+                  <!-- <div style="width: 100%;">
+                    <p>タイトル：</p>
+                    <input type="text" maxlength="15" style="width: 100%;">
+                    <div class="member-add">
+                      <p style="margin-top: 20px;">メンバー</p>
+                      <select class="form-control member-select" name="member">
+                        <option value="">高橋</option>
+                        <option value="">シュート</option>
+                      </select>
+                    </div>
+                    <button type="button" class="btn btn-primary pls-btn" style="display: block;height: 30px; padding:2px 5px 8px 5px; width: 30px;margin-top: 10px;" onclick="pushPlsBtn(this);">＋</button>
+                  </div> -->
+                  <div style="width: 100%;" class="input-div">
+                    <p>(例： 01:00, 20:30)</p>
+                    <input type="time" maxlength="5" class="form-control input-timeFrom" onblur="adjastTime(this);">
+                    <span class="wave">〜</span>
+                    <input type="time" maxlength="5" class="form-control input-timeTo" onblur="adjastTime(this);">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
         </tr>
         <tr>
           <td class="day-content"><a href=""></a></td>

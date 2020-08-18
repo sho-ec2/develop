@@ -22,8 +22,25 @@ function putDateInCalendar(datesList){
 }
 
 $('.week1').on('click', 'td', function(){
-  $('.detail').slideToggle(2);
+  $('.week1-detail').slideToggle(2);
 });
+
+$('.week2').on('click', 'td', function(){
+  $('.week2-detail').slideToggle(2);
+});
+
+$('.week3').on('click', 'td', function(){
+  $('.week3-detail').slideToggle(2);
+});
+
+$('.week4').on('click', 'td', function(){
+  $('.week4-detail').slideToggle(2);
+});
+
+$('.week5').on('click', 'td', function(){
+  $('.week5-detail').slideToggle(2);
+});
+
 
 function pushPlsBtn(v){
   //alert($(v).parent().html());
