@@ -13,6 +13,7 @@ table{
 
 table td{
   /* border: 1px solid black; */
+  height: 50px !important;
 }
 
 .td-height{
@@ -31,7 +32,7 @@ h4{
   /* height: 66px; */
   height: 40px;
 }
-
+/* 
 .week1-detail{
   height: 100px;
   display: none;
@@ -55,7 +56,7 @@ h4{
 .week5-detail{
   height: 100px;
   display: none;
-}
+} */
 
 .h3-title{
   margin-top: 20px;
@@ -69,13 +70,17 @@ h4{
   margin-top: 10px;
 }
 
-.member-select{
+/* .member-select{
   height: 30px;
   margin-bottom: 10px;
-}
+} */
 
-.input-div{
+/* .input-div{
   margin: 0px auto;
+} */
+
+.input-time{
+  text-align: center;
 }
 
 .input-timeFrom{
@@ -84,9 +89,9 @@ h4{
 }
 
 .wave{
-  width: 20% !important;
+  /* width: 20% !important; */
   text-align: center;
-  /* padding: 0px 15px; */
+  padding: 0px 15px;
 }
 
 .input-timeTo{
@@ -94,6 +99,20 @@ h4{
   text-align: center;
 }
 
-.input-div input{
+.input-time input{
   display: inline;
+}
+
+.frind-list{
+  width: 95%;
+  margin: 10px auto 0px auto;
+}
+
+.list-group-item{
+  height: 40px;
+  padding-top: 8px !important;
+}
+
+.friend-time{
+  float: right;
 }
