@@ -34,7 +34,7 @@ function pushPlsBtn(v){
 function adjastTime(v){
   var raw = $(v).val();
   if(raw){
-    if(raw.length === 4){
+    if(raw.length === 4 || raw.length === 5){
       if(raw.match(/^([01]?[0-9]|2[0-3])([0-5][0-9])$/)){
         var time = raw.substring(0, 2) + ':' + raw.substring(2, 4);
         $(v).val(time);
