@@ -72,7 +72,7 @@ function adjastTime(v){
 
 // 日付クリック時、詳細を画面に表示する
 $('.click-cls').on('click', function(){
-  $('.list-group').empty();
+  $('.list-group .removal-li').remove();
   if ($(this).hasClass('noEffect')){
     $('.detail-box').css('display', 'none');
   }else{
@@ -85,19 +85,24 @@ $('.click-cls').on('click', function(){
   }
 
   // djangoソース完成後削除予定
-  // var details = [];
-  var details = [['高橋', '12:00', '18:00'], ['シュート', '15:00', '18:00']]; 
+  var details = [];
+  var details = [['001', '高橋'], ['002', 'シュート'], ['003', '兄さん']]; 
   list_details(details)
 });
 
 // ajaxで取得したデータをリストにして表示する
 function list_details(details){
   $.each(details, function(index, value){
-    var list = $('<li class="list-group-item"></li>')
-    $(list).append('<label class="name">' + value[0] + '</label>');
-    $(list).append('<label class="startTime floatRight">' + value[1] + '</label>');
-    $(list).append('<label class="floatRight"> 〜 </label>');
-    $(list).append('<label class="startEnd floatRight">' + value[2] + '</label>');
+    var list = $('<li class="list-group-item removal-li"></li>')
+    $(list).append('<label class="name" class="form-check-input" for="' + value[0] + '">' + value[1] + '</label>');
+    $(list).append('<input type="checkbox" id=' + value[0] + ' class="floatRight list-checkbox">');
     $('.list-group').append(list);
   });
+};
+
+function searchName(){
+   var search_name = $('#search').val();
+   alert(search_name);
+   // search_nameをサーバー側にajaxして検索処理をする
+   // 検索結果をlist_detail()を使用して再表示する
 };

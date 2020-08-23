@@ -1,0 +1,14 @@
+a:hover{
+  background-color: rgb(194, 241, 235);
+}
+
+.list-group-item{
+  height: 75px;
+  font-size: 20px;
+  padding-top: 8px !important;
+}
+
+.appointment-title{
+  padding-top: 20px;
+  margin-bottom: 0px !important;
+}

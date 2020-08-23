@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/appointment-detail.css">
+    <link rel="stylesheet" href="css/base.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>カレンダー</title>
+  </head>
+  <body>
+    <header>
+      <div class="pos-f-t">
+        <nav class="navbar navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <h2 class="base-header-title font-white">
+            カレンダー
+          </h2>
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-3">
+            <h5 class="text-white h5"><button><a href="#">empty</a></button></h5>
+            <h5 class="text-white h5"><button><a href="#">empty</a></button></h5>
+            <h5 class="text-white h5"><button><a href="#">empty</a></button></h5>
+            <h5 class="text-white h5"><button><a href="#">ログアウト</a></button></h5>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="login-form card">
+        <h3 class="card-title td-center appointment-detail-title font30">予定詳細</h3>
+        <div class="card-body">
+          <div class="appointment-detail">
+            <p class="font30">タイトル</p>
+            <p class="font30">8月20日</p>
+            <p>
+              <label id="startTime" class="font25">12:00</label>
+              <label class="font25">〜</label>
+              <label class="font25" id='endTime'>18:00</label>
+            </p>
+            <p class="font30">メンバー</p>
+            <ul class="list-group">
+              <li class="list-group-item font20">高橋</li>
+              <li class="list-group-item font20">シュート</li>
+              <li class="list-group-item font20">兄さん</li>
+            </ul>
+          </div>
+          <div class="button-area">
+            <button class="btn btn-primary jumpin">参加</button>
+            <button class="btn btn-danger jumpout">不参加</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  javascript&Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/appointment-detail.js"></script>
+  </body>
+</html>

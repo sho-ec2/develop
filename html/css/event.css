@@ -1,3 +1,4 @@
+
 .container{
   height: 100%;
 }
@@ -70,14 +71,10 @@ h4{
   margin-top: 10px;
 }
 
-/* .member-select{
-  height: 30px;
-  margin-bottom: 10px;
-} */
-
-/* .input-div{
-  margin: 0px auto;
-} */
+.input-text{
+  width: 95% !important;
+  margin: 0px auto 10px auto;
+}
 
 .input-time{
   text-align: center;
@@ -113,14 +110,6 @@ h4{
   padding-top: 8px !important;
 }
 
-/* .startTime{
-  float: right;
-}
-
-.endTime{
-  float: right;
-} */
-
 .floatRight{
   float: right;
 }
@@ -131,4 +120,27 @@ h4{
 
 .btn-submit{
   margin: 10px 0px;
+}
+
+#search-window{
+  padding: 2px 3px 0px 3px !important;
+}
+
+#search{
+  height: 35px;
+  width: 80%;
+  display: inline-block !important;
+}
+
+#search-btn{
+  height: 35px;
+  width: 20%;
+  display: inline-block !important;
+  padding-top: 4px !important;
+}
+
+.list-checkbox{
+  width: 30px !important;
+  height: 23px !important;
+  /* transform: scale(5.5) !important; */
 }
