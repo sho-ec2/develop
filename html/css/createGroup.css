@@ -1,0 +1,54 @@
+
+.card{
+  margin-top: 10px;
+}
+
+.card-body{
+  padding-bottom: 0px !important;
+}
+
+.container{
+  height: 100%;
+}
+
+.createGroup-title{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-submit{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+#search-window{
+  padding: 2px 3px 0px 3px !important;
+}
+
+#search{
+  height: 35px;
+  width: 80%;
+  display: inline-block !important;
+}
+
+#search-btn{
+  height: 35px;
+  width: 20%;
+  display: inline-block !important;
+  padding-top: 4px !important;
+}
+
+.list-checkbox{
+  width: 30px !important;
+  height: 23px !important;
+  /* transform: scale(5.5) !important; */
+}
+
+.list-group-item{
+  height: 40px;
+  padding-top: 8px !important;
+}
+
+.friend-list{
+  margin-top: 15px;
+}

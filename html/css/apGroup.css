@@ -1,0 +1,18 @@
+.ap-group-form{
+  width: 90%;
+  margin: 0px auto;
+}
+
+label{
+  margin-bottom: 0px !important;
+}
+
+.apBtn{
+  padding: 2px 12px !important;
+  margin-bottom: 0px;
+}
+
+.ap-group-title{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

@@ -11,9 +11,6 @@ input{
 
 /* class指定 */
 
-.container{
-    margin-top: 40px;
-}
 
 .login-form{
     height: 100%;
@@ -33,12 +30,9 @@ input{
     margin-bottom: 0px !important;
 }
 
-.accountID-area{
-    margin-top: 10px;
-}
-
-.password-area{
-    margin-top: 10px;
+.login-table{
+    width: 90%;
+    margin: 10px auto;
 }
 
 .login-btn{

@@ -32,28 +32,62 @@
       </div>
     </header>
     <div class="container">
-      <div class="login-form card">
-        <h3 class="card-title login-title">新規登録</h3>
-        <div class="card-body">
-          <div class="accountID-area">
-            <p>アカウントID</p>
-            <input id="accountID" type="text" placeholder="アカウントID">
-          </div>
-          <div class="accountID-area">
-            <p>メールアドレス</p>
-            <input id="email" type="email" placeholder="メールアドレス">
-          </div>
-          <div class="password-area">
-            <p>パスワード</p>
-            <input id="password" type="password" placeholder="パスワード">
-          </div>
-          <div class="password-area">
-            <p>再パスワード</p>
-            <input id="repassword" type="password" placeholder="再パスワード">
-          </div>
-          <button type="submit" class="btn btn-primary login-btn">送信</button>
+      <table class="signup-table">
+        <th>
+          <h3 class="login-title">新規登録</h3>
+        </th>
+        <div class="body">
+          <tr>
+            <td>
+              <p>メールアドレス</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input id="email" type="email" placeholder="メールアドレス">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>パスワード</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input id="password" type="password" placeholder="パスワード">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>再パスワード</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input id="repassword" type="password" placeholder="再パスワード">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>性別</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <select id="gender" class="form-control">
+                <option value="m">男性</option>
+                <option value="f">女性</option>
+                <option value="o">その他</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="submit" class="btn btn-primary login-btn">送信</button>
+            </td>
+          </tr>
         </div>
-      </div>
+      </table>
     </div>
     <!--  javascript&Jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

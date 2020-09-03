@@ -12,16 +12,13 @@ input{
 /* class指定 */
 
 .container{
-  margin-top: 40px;
+  /* margin-top: 20px; */
 }
 
 .login-form{
   height: 100%;
 }
 
-.white-text{
-  color: white;
-}
 
 .navbar{
   height: 60px;
@@ -42,11 +39,16 @@ input{
 }
 
 .login-btn{
-  margin-top: 30px;
+  margin-top: 40px;
   width: 100%;
 }
 
 .new-account{
   font-size: 15px !important;
   text-align: center;
+}
+
+.signup-table{
+  width: 90%;
+  margin: 10px auto;
 }

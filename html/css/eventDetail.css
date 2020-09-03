@@ -1,0 +1,26 @@
+.event-detail-form{
+  width: 90%;
+  margin: 10px auto;
+}
+
+p{
+  border-bottom: grey 1px solid;
+}
+
+.jumpin{
+  width: 48%;
+}
+
+.jumpout{
+  width: 48%;
+}
+
+.button-area{
+  margin-top: 15px;
+  text-align: center;
+}
+
+.event-detail-title{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
