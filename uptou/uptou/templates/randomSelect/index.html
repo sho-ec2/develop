@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+
+{% for data in datas %}
+
+  {{ data.name }}<br>
+
+{% endfor %}
+
+
+{% endblock %}
