@@ -1,0 +1,12 @@
+select{
+  margin: 5px 0px !important;
+}
+
+.badge-icon{
+  font-size: 15px !important;
+  margin: 0px auto !important;
+}
+
+.margin-15{
+  margin: 15px 0px 15px 0px;
+}

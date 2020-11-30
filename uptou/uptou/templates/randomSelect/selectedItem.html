@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+{% static 'css/selectedItem.css' %}
+{% endblock %}
+
+{% block contents %}
+
+<div class="result">
+  <p>{{ name }}</p>
+  <p>{{ open }}</p>
+  <p>{{ url }}</p>
+  <p>{{ level }}</p>
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+{% static 'js/selectedItem.js' %}
+{% endblock %}

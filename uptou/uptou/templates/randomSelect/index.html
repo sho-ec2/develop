@@ -1,13 +1,62 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block css %}
+{% static 'css/index.css' %}
+{% endblock %}
+
 {% block contents %}
 
-{% for data in datas %}
+  <div class="section1 text-center">
+    <div class="alert alert-warning" role="alert" style="margin-bottom: 0px;">
+      <p style="height: 25px; margin-bottom: 0px;">あなたのお店選びを解決！</p>
+    </div>
+    <div class="margin-15"></div>
+    <p class="badge badge-primary badge-icon">駅情報</p>
+    <select class="form-control" id="area" name="area" onchange="HREOnChangeArea();">
+      <option value="エリアを選択してください">エリアを選択してください</option>
+    </select>
+    <select class="form-control" id="line" name="line" onchange="HREOnChangeLine();">
+      <option value="路線を選択してください">路線を選択してください</option>
+    </select>
+    <select class="form-control" id="station" name="station">
+      <option value="駅を選択してください">駅を選択してください</option>
+    </select>
+    <div class="margin-15"></div>
+    <p class="badge badge-success badge-icon">スポット</p>
+    <select class="form-control" id="category" name="category">
+      <option value="項目を選択してください">項目を選択してください</option>
+      <option value="bakery">パン屋</option>
+      <option value="bar">バー</option>
+      <option value="cafe">カフェ</option>
+      <option value="food">飲食店</option>
+      <option value="night_club">ナイトクラブ</option>
+      <option value="park">公園</option>
+      <option value="restaurant">レストラン</option>
+    </select>
+  </div>
+  <div class="margin-15"></div>
+  <div class="section1 text-center">
+    <form class="submitForm" action="{% url 'random:returnResult' %}" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <button type="button" class="btn btn-primary" id="searchbtn" onclick="submitButton();">君に決めた。</button>
+    </form>
+  </div>
+  <div class="margin-15"></div>
+  <div class="row justify-content-center">
+    <div class="col-xs-3">
+      <input type="text" id="selectedItem" class="form-control">
+    </div>
+  </div>
+  <div class="result">
+    <p>{{ inf.station }}</p>
+    <p>{{ inf.radius }}</p>
+    <p>{{ inf.category }}</p>
+  </div>
+  <footer></footer>
 
-  {{ data.name }}<br>
+{% endblock %}
 
-{% endfor %}
-
-
+{% block js %}
+{% static 'js/index.js' %}
 {% endblock %}
