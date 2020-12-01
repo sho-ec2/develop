@@ -43,7 +43,7 @@ def getPlaceInfo(station, category, radius):
           'type': category,
           'language': 'ja',
           'radius': radius,
-          'key': 'AIzaSyD33jnUmNEXE9REuedHsjRTivdoratQ8fk'}
+          'key': key}
     s = requests.Session()
     r = s.get(url, params=q)
     json_o = r.json()
