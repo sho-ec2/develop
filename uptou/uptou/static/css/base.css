@@ -1,0 +1,12 @@
+.text-center {
+  text-align: center !important;
+}
+
+.messageArea{
+  color: red;
+  font-size: 20px;
+}
+
+.margin-15{
+  margin: 15px 0px 15px 0px;
+}

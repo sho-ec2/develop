@@ -9,10 +9,17 @@
 {% block contents %}
 
 <div class="result">
-  <p>{{ name }}</p>
-  <p>{{ open }}</p>
-  <p>{{ url }}</p>
-  <p>{{ level }}</p>
+  <div class="margin-15"></div>
+  <div class="result-title text-center">
+    <h2>今から向かうのは。。。</h2>
+  </div>
+  <div class="margin-15"></div>
+  <div class="result-name text-center">
+    <h1 class="selected-name">{{ name }}</h1>
+  </div>
+  <div class="margin-15"></div>
+  <div class="a-tag text-center">{{ url | safe }}</div>
+  <div class="margin-15"></div>
 </div>
 
 
