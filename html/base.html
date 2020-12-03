@@ -48,8 +48,8 @@
     </header>
     <div class="section1 text-center">
     <div class="alert alert-warning" role="alert">あなたのお店選びを解決！</div>
-    <body onload="HRELoadArea('area', 'line', 'station');"></body>
-    　<span class="badge badge-primary">駅情報</span>
+    <body onload="HRELoadArea('area', 'line', 'station', 'x', 'y');"></body>
+    <span class="badge badge-primary">駅情報</span>
       <br>
       <select id="area" name="area" onchange="HREOnChangeArea();">
       <option value="エリアを選択してください">エリアを選択してください</option>
@@ -57,9 +57,10 @@
       <select id="line" name="line" onchange="HREOnChangeLine();">
       <option value="路線を選択してください">路線を選択してください</option>
       </select>
-      <select id="station" name="station">
+      <select id="station" name="station" >
       <option value="駅を選択してください">駅を選択してください</option>
       </select>
+  
       <br>
       <span class="badge badge-success">スポット</span>
       <br>
@@ -86,7 +87,7 @@
       <br>
       <div class="section1 text-center">
       <button type="submit" class="btn btn-primary" id="searchbtn">君に決めた。</button>  
-    　</div>　
+    </div>
     <div class="row justify-content-center">
      <div class="col-xs-3 ">
         <input type="text" id="text1" class="form-control">
@@ -143,12 +144,18 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>
-      $("#searchbtn").click(function() {
-        // value値を取得
-         const str1 = $("#station").val();
-        $("#text1").val(str1);
-      });    
+  $('#searchbtn').click(function() {
+    $.getJSON('http://express.heartrails.com/api/json?method=getStations&line='+$("#line").val()+'&name='+$("#station").val(),
+    )
+    // 結果を取得したら…
+    .done(function(response) {
+      if (response.response.station[0]) {
+        alert("x座標："+response.response.station[0].x+"y座標："+response.response.station[0].y)
+      } 
+    });
+  });
     </script>
   </body>
 </html>
