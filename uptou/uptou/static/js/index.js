@@ -4,30 +4,34 @@ $("#searchbtn").click(function() {
   $("#text1").val(str1);
 });
 
+// function getLocation() {
+//   var line = $('#line').val();
+//   var name = $('#station').val();
+//   // 経度
+//   var lon;
+//   // 緯度
+//   var lat;
+
+//   var url = 'http://express.heartrails.com/api/json?method=getStations&line='+line+'&name='+name;
+//   $.getJSON(url,
+//   )
+//   // 結果を取得したら…
+//   .done(function(response) {
+//     if (response.response.station[0]) {
+//       lat = response.response.station[0].x;
+//       lon = response.response.station[0].y;
+//     } 
+//   });
+
+//   list = [lat, lon];
+
+//   return list;
+// }
 
 function submitButton(){
+  $('#id_line').val($('#line').val());
   $('#id_station').val($('#station').val());
   $('#id_category').val($('#category').val());
   $('#id_radius').val(500);
-  $('form').submit(
-  //   function() {
-  //       alert('in ajax');
-  //       //event.preventDefault();
-  //       var form = $(this);
-  //       $.ajax({
-  //         url: form.prop("action"),
-  //         method: form.prop("method"),
-  //         data: form.serialize(),
-  //         timeout: 10000,
-  //         dataType: "text",
-  //       })
-  //       .done( function(data) {
-  //         alert("done");
-  //         $("#selectedItem").text(data);
-  //       })
-  //       .fail(function(){
-  //         alert('error');
-  //       })
-  //     }
-  );
+  $('form').submit();
 }
