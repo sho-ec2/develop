@@ -3,9 +3,6 @@ from django.shortcuts import render
 from randomSelect.forms import getInfoForm
 
 import requests, random
-import json
-
-
 
 # 初期表示
 def Index(request):
@@ -25,17 +22,10 @@ def returnResult(request):
             location = getLocation(line, station)
             lat = location['x']
             lon = location['y']
-            targetInfo = getPlaceInfo(category, radius, lat, lon)
-            print('---------------------')
+            targetInfo = demoMethod(category, radius, lat, lon)
             print(targetInfo)
-            print('---------------------')
-            if bool(targetInfo):
-                # ランダムな数字を取得し、情報を1つに絞る
-                content = selectItem(targetInfo)
-            else:
-                message = '利用可能なお店はありません'
-                content = {'message': message}
-                return render(request, 'randomSelect/index.html', content)
+            # ランダムな数字を取得し、情報を1つに絞る
+            content = demoSelectItem(targetInfo)
             return render(request, 'randomSelect/selectedItem.html', content)
         else:
             form = getInfoForm
@@ -94,7 +84,7 @@ def demoSelectItem(targetInfo):
 # googleMapAPIから情報を取得する
 def getPlaceInfo(category, radius, lat, lon):
     url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
-    key = getKeyinfo()
+    key = 'aaa'
     q = { 'location': str(lon) + ', ' + str(lat),
           'type': category,
           'language': 'ja',
@@ -104,6 +94,9 @@ def getPlaceInfo(category, radius, lat, lon):
     r = s.get(url, params=q)
     json_o = r.json()
     results = json_o['results']
+    print('-----------------------------------------------')
+    print(results)
+    print('-----------------------------------------------')
 
     return results
 
@@ -134,16 +127,3 @@ def demoMethod(category, radius, lat, lon):
             'vicinity': '大阪市北区茶屋町１０−１２ ＮＵ茶屋町8F'}
             ]
     return result
-
-def emptyResult(category, radius, lat, lon):
-    result = {}
-    return result
-
-
-def getKeyinfo():
-    json_open = open('randomSelect/secret.json', 'r')
-    json_load = json.load(json_open)
-    key = json_load['googleapi']
-
-    print(key)
-    return key
