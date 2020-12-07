@@ -31,7 +31,7 @@ def returnResult(request):
             print('---------------------')
             if bool(targetInfo):
                 # ランダムな数字を取得し、情報を1つに絞る
-                content = selectItem(targetInfo)
+                content = demoSelectItem(targetInfo)
             else:
                 message = '利用可能なお店はありません'
                 content = {'message': message}
