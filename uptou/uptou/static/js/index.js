@@ -32,6 +32,6 @@ function submitButton(){
   $('#id_line').val($('#line').val());
   $('#id_station').val($('#station').val());
   $('#id_category').val($('#category').val());
-  $('#id_radius').val($('#radius').val());
+  $('#id_radius').val(500);
   $('form').submit();
 }
