@@ -10,3 +10,8 @@
 .margin-15{
   margin: 15px 0px 15px 0px;
 }
+
+a{
+  color: white !important;
+  text-decoration: none
+}
