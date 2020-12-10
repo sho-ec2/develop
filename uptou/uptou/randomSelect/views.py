@@ -23,7 +23,6 @@ def returnResult(request):
             radius = form.cleaned_data['radius']
             line = form.cleaned_data['line']
             location = getLocation(line, station)
-            print(station + ': ' + category + ': ' + str(radius))
             lat = location['x']
             lon = location['y']
             targetInfo = getPlaceInfo(category, radius, lat, lon)
@@ -53,7 +52,9 @@ def selectItem(targetInfo):
     count = len(targetInfo)
     while i < count:
         inf = targetInfo[random.randrange(0,count)]
+        print('--------------------------++++++++++++++++++++++++++')
         print(inf)
+        print('--------------------------++++++++++++++++++++++++++')
         if 'opening_hours' in inf.keys():
             if 'open_now' in inf['opening_hours'].keys():
                 open = str(inf['opening_hours']['open_now'])
@@ -82,8 +83,8 @@ def selectItem(targetInfo):
         i += 1
         print('------------------------')
         print(open)
+        print('No' + i)
         print('------------------------')
-        print(i)
     return content
 
 # 開発用メソッド
@@ -110,10 +111,10 @@ def demoSelectItem(targetInfo):
 def getPlaceInfo(category, radius, lat, lon):
     url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
     key = getKeyinfo()
-    category = []
-    category.append(category) 
+    items = []
+    items.append(category) 
     q = { 'location': str(lon) + ', ' + str(lat),
-          'types': category,
+          'types': items,
           'language': 'ja',
           'radius': radius,
           'key': key}
