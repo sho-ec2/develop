@@ -59,11 +59,14 @@ def selectItem(targetInfo):
             if 'open_now' in inf['opening_hours'].keys():
                 open = str(inf['opening_hours']['open_now'])
         else:
-            open =  'notSure'
+            open = 'notSure'
         if open == 'True':
             name = inf['name']
-            place_id = inf['place_id']
-            url = 'https://www.google.com/maps/place/?q=place_id:' + place_id
+            lat = str(inf['geometry']['location']['lat'])
+            lon = str(inf['geometry']['location']['lng'])
+            coordinate = lat + ',' + lon
+            url = 'https://www.google.com/maps/search/?api=1&query=' + name + '&center=' + coordinate
+            print(url)
             content = {'name': name, 'open':open, 'url': url}
             if 'price_level' in inf.keys():
                 level = inf['price_level']
@@ -71,19 +74,23 @@ def selectItem(targetInfo):
             break
         elif open == 'notSure':
             name = inf['name']
-            place_id = inf['place_id']
-            url = 'https://www.google.com/maps/place/?q=place_id:' + place_id
-            content = {'name': name, 'open':open, 'url': url}
+            lat = str(inf['geometry']['location']['lat'])
+            lon = str(inf['geometry']['location']['lng'])
+            coordinate = lat + ',' + lon
+            url = 'https://www.google.com/maps/search/?api=1&query=' + name + '&center=' + coordinate
+            message = '開いているかわからないけど。。。'
+            content = {'name': name, 'open':open, 'url': url, 'message': message}
             if 'price_level' in inf.keys():
                 level = inf['price_level']
                 content['level'] = level
         else:
-            message = '周辺に利用可能なお店はありませんでした。'
-            content ={'message': message}
+            if not bool(content):
+                message = '周辺に利用可能なお店はありませんでした。'
+                content ={'message': message}
         i += 1
         print('------------------------')
         print(open)
-        print('No' + i)
+        print('No' + str(i))
         print('------------------------')
     return content
 
@@ -96,8 +103,9 @@ def demoSelectItem(targetInfo):
         #open = inf['opening_hours']['open_now']
         open = True
         name = inf['name']
-        place_id = inf['place_id']
-        url = 'https://www.google.com/maps/place/?q=place_id:' + place_id
+        #place_id = inf['place_id']
+        # url = 'https://www.google.com/maps/place/?q=place_id:' + place_id
+        url = 'https://www.google.com/maps/place/?query=' + name
         # price_levelがない場合があるので、コメントアウト
         #level = inf['price_level']
         level = '0'
@@ -133,26 +141,6 @@ def getLocation(line, name):
     result = res_o['response']['station'][0]
     return result
 
-def demoMethod(category, radius, lat, lon):
-    result = [
-            {'business_status': 'OPERATIONAL', 
-            'geometry': {'location': {'lat': 34.7071056, 'lng': 135.4991451}, 'viewport': {'northeast': {'lat': 34.7084735802915, 'lng': 135.5005426802915}, 'southwest': {'lat': 34.7057756197085, 'lng': 135.4978447197085}}},
-            'icon': 'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png', 
-            'name': 'ビランチャ 梅田店', 
-            'opening_hours': {'open_now': True}, 
-            'photos': [{'height': 2640, 'html_attributions': ['<a href="https://maps.google.com/maps/contrib/113091371275696856641">ビランチャ 梅田店</a>'], 'photo_reference': 'ATtYBwL2hM6TNGEUaOsZsBy0sGCltVGl92YLDp9Noxv3H9hN-FdSC6V0k5N--uaM5j9fR6VbrLvHxhuzz3O1AqhGgzyFjaJvjYn1T3XYbEmchuircjDpk-TZQYTyD-5gkwiuV3W-hCgdgEIDB4eSsL5FpS0Sd3y4otQ81pOVqqSe_mJHRy4O', 'width': 3960}], 
-            'place_id': 'ChIJK974ppHmAGAR0SjOxht3Tu8', 
-            'plus_code': {'compound_code': 'PF4X+RM 日本、大阪府大阪市', 'global_code': '8Q6QPF4X+RM'}, 
-            'price_level': 2, 
-            'rating': 3.6, 
-            'reference': 'ChIJK974ppHmAGAR0SjOxht3Tu8', 
-            'scope': 'GOOGLE', 
-            'types': ['meal_takeaway', 'cafe', 'restaurant', 'food', 'point_of_interest', 'establishment'], 
-            'user_ratings_total': 58, 
-            'vicinity': '大阪市北区茶屋町１０−１２ ＮＵ茶屋町8F'}
-            ]
-    return result
-
 def emptyResult(category, radius, lat, lon):
     result = {}
     return result
@@ -162,6 +150,4 @@ def getKeyinfo():
     json_open = open('randomSelect/secret.json', 'r')
     json_load = json.load(json_open)
     key = json_load['googleapi']
-
-    print(key)
     return key
