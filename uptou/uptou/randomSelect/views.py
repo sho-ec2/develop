@@ -23,7 +23,7 @@ def returnResult(request):
             radius = form.cleaned_data['radius']
             line = form.cleaned_data['line']
             keyword = form.cleaned_data['keyword']
-            if keyword == 'followOurDream':
+            if keyword == 'followUs':
                 location = getLocation(line, station)
                 lat = location['x']
                 lon = location['y']
@@ -37,7 +37,8 @@ def returnResult(request):
                     return render(request, 'randomSelect/index.html', content)
                 return render(request, 'randomSelect/selectedItem.html', content)
             else:
-                return render(request, 'randomSelect/index.html')
+                content = {'form': form, 'message' : 'キーワードが異なります'}
+                return render(request, 'randomSelect/index.html', content)
         else:
             form = getInfoForm
             message = '有効な値を選択してください'
