@@ -22,18 +22,22 @@ def returnResult(request):
             category = form.cleaned_data['category']
             radius = form.cleaned_data['radius']
             line = form.cleaned_data['line']
-            location = getLocation(line, station)
-            lat = location['x']
-            lon = location['y']
-            targetInfo = getPlaceInfo(category, radius, lat, lon)
-            if bool(targetInfo):
-                # ランダムな数字を取得し、情報を1つに絞る
-                content = selectItem(targetInfo)
+            keyword = form.cleaned_data['keyword']
+            if keyword == 'followOurDream':
+                location = getLocation(line, station)
+                lat = location['x']
+                lon = location['y']
+                targetInfo = getPlaceInfo(category, radius, lat, lon)
+                if bool(targetInfo):
+                    # ランダムな数字を取得し、情報を1つに絞る
+                    content = selectItem(targetInfo)
+                else:
+                    message = '利用可能なお店はありません'
+                    content = {'message': message}
+                    return render(request, 'randomSelect/index.html', content)
+                return render(request, 'randomSelect/selectedItem.html', content)
             else:
-                message = '利用可能なお店はありません'
-                content = {'message': message}
-                return render(request, 'randomSelect/index.html', content)
-            return render(request, 'randomSelect/selectedItem.html', content)
+                return render(request, 'randomSelect/index.html')
         else:
             form = getInfoForm
             message = '有効な値を選択してください'

@@ -33,5 +33,6 @@ function submitButton(){
   $('#id_station').val($('#station').val());
   $('#id_category').val($('#category').val());
   $('#id_radius').val($('#radius').val());
+  $('#id_keyword').val($('#keyword').val());
   $('form').submit();
 }
